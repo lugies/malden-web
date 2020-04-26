@@ -27,7 +27,6 @@
         <div class="row">
             <div class="section-header text-center">
                 <h2>BAĞLANTILAR</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
         <!-- /row -->
@@ -41,7 +40,7 @@
                 <!-- single course -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="course">
-                        <a href="#" class="course-img">
+                        <a href="https://www.gastrosocial.ch/de" target="_blank" class="course-img">
                             <img src="{{ asset('assets/img/course01.jpg')}}" alt="">
                             <i class="course-link-icon fa fa-link"></i>
                         </a>
@@ -54,7 +53,7 @@
                 <!-- single course -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="course">
-                        <a href="#" class="course-img">
+                        <a href="https://www.ahvluzern.ch/online-schalter/" target="_blank" class="course-img">
                             <img src="{{ asset('assets/img/course02.jpg')}}" alt="">
                             <i class="course-link-icon fa fa-link"></i>
                         </a>
@@ -67,7 +66,7 @@
                 <!-- single course -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="course">
-                        <a href="#" class="course-img">
+                        <a href="https://www.aksz.ch/online-schalter/" target="_blank" class="course-img">
                             <img src="{{ asset('assets/img/course03.jpg')}}" alt="">
                             <i class="course-link-icon fa fa-link"></i>
                         </a>
@@ -79,7 +78,7 @@
 
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="course">
-                        <a href="#" class="course-img">
+                        <a href="https://www.akzug.ch/online-schalter/" target="_blank" class="course-img">
                             <img src="{{ asset('assets/img/course04.jpg')}}" alt="">
                             <i class="course-link-icon fa fa-link"></i>
                         </a>
@@ -98,7 +97,7 @@
                 <!-- single course -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="course">
-                        <a href="#" class="course-img">
+                        <a href="https://www.estv.admin.ch/estv/de/home/mehrwertsteuer.html" target="_blank" class="course-img">
                             <img src="{{ asset('assets/img/course05.jpg')}}" alt="">
                             <i class="course-link-icon fa fa-link"></i>
                         </a>
@@ -111,7 +110,7 @@
                 <!-- single course -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="course">
-                        <a href="#" class="course-img">
+                        <a href="https://migration.lu.ch/formulare" target="_blank" class="course-img">
                             <img src="{{ asset('assets/img/course06.jpg')}}" alt="">
                             <i class="course-link-icon fa fa-link"></i>
                         </a>
@@ -124,7 +123,7 @@
                 <!-- single course -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="course">
-                        <a href="#" class="course-img">
+                        <a href="https://www.sz.ch/behoerden/staatskanzlei-departemente/volkswirtschaftsdepartement/amt-fuer-migration.html/72-416-387-381-1968" target="_blank" class="course-img">
                             <img src="{{ asset('assets/img/course07.jpg')}}" alt="">
                             <i class="course-link-icon fa fa-link"></i>
                         </a>
@@ -137,7 +136,7 @@
                 <!-- single course -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="course">
-                        <a href="#" class="course-img">
+                        <a href="https://www.zg.ch/behoerden/sicherheitsdirektion/amt-fur-migration" target="_blank" class="course-img">
                             <img src="{{ asset('assets/img/course08.jpg')}}" alt="">
                             <i class="course-link-icon fa fa-link"></i>
                         </a>

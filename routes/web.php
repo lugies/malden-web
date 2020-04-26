@@ -22,3 +22,6 @@ Route::get('/services', function () {
 Route::get('/links', function () {
     return view('.front-end.links');
 });
+Route::get('/about', function () {
+    return view('.front-end.about');
+});

@@ -13,7 +13,7 @@
                 <div class="col-md-8">
                     <h1 class="white-text">MALDEN</h1>
                     <p class="lead white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a class="main-button icon-button" href="#">İletişime Geç</a>
+                    <a class="main-button icon-button" href="{{url('/')}}">İletişime Geç</a>
                 </div>
             </div>
             <div class="row">
@@ -45,7 +45,7 @@
                 <div class="feature">
                     <i class="feature-icon fa fa-book"></i>
                     <div class="feature-content">
-                        <h4>Mali Müşavirlik</h4>
+                        <h4>VİZYON</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus aliquam orci, eu placerat odio hendrerit ac.</p>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="feature">
                     <i class="feature-icon fa fa-users"></i>
                     <div class="feature-content">
-                        <h4>Firma Danışmanlığı</h4>
+                        <h4>MİSYON</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus aliquam orci, eu placerat odio hendrerit ac.</p>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                 <div class="feature">
                     <i class="feature-icon fa fa-money"></i>
                     <div class="feature-content">
-                        <h4>Muhasebe</h4>
+                        <h4>DEĞERLERİMİZ</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus aliquam orci, eu placerat odio hendrerit ac.</p>
                     </div>
                 </div>
