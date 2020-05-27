@@ -27,16 +27,19 @@
                         <li><a href="{{url('/services')}}">Hizmetler</a></li>
                         <li><a href="{{url('/about')}}">Hakkımızda</a></li>
                         <li><a href="{{url('/links')}}">Bağlantılar</a></li>
-                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="{{url('/contact')}}">İletişim</a></li>
                     </ul>
                 </nav>
                 <!-- /Navigation -->
             </div>
             <div class="col-md-2 col-sm-2 col-xs-4">
-                <div class="language">
-                    <a href=""><img class="flag" src="{{ asset('assets/png/switzerland.png') }}" alt="switzerland"></a>
-                    <a href=""><img class="flag" src="{{ asset('assets/png/turkey.png') }}" alt="turkey"></a>
+                <div id="nav-lang">
+                    <div id="language" class="language">
+                        <a href=""><img class="flag" src="{{ asset('assets/png/switzerland.png') }}" alt="switzerland"></a>
+                        <a href=""><img class="flag" src="{{ asset('assets/png/turkey.png') }}" alt="turkey"></a>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </div>

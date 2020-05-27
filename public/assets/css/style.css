@@ -121,8 +121,8 @@ blockquote:before{
 }
 
 .section-hr {
-	margin-top:40px;
-	margin-bottom:40px;
+	margin-top:5px;
+	margin-bottom:5px;
 	border-color: #EBEBEB;
 }
 
@@ -339,8 +339,29 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 		transition: 0.4s all cubic-bezier(.77,0,.18,1);
 		z-index:9;
 	}
+	#nav-lang {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 0%;
+		max-width:250px;
+		background: #FFF;
+		padding-top: 80px;
+		-webkit-transform: translateX(100%);
+		    -ms-transform: translateX(100%);
+		        transform: translateX(100%);
+		-webkit-transition: 0.4s all cubic-bezier(.77,0,.18,1);
+		transition: 0.4s all cubic-bezier(.77,0,.18,1);
+		z-index:9;
+	}
 
 	#header.nav-collapse #nav{
+		width:100%;	
+		-webkit-transform: translateX(0%);
+		    -ms-transform: translateX(0%);
+		        transform: translateX(0%);
+	}
+	#header.nav-collapse #nav-lang{
 		width:100%;	
 		-webkit-transform: translateX(0%);
 		    -ms-transform: translateX(0%);
@@ -393,7 +414,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .navbar-toggle > span , .navbar-toggle > span:before , .navbar-toggle > span:after {
 	height: 2px;
 	width: 25px;
-	background-color:#374050;
+	background-color:#ff6363;
 }
 
 .navbar-toggle > span:before {
@@ -880,6 +901,9 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .footer-social li a.linkedin {
 	background-color:#007bb5;
 }
+.footer-social li a.xing {
+	background-color:#2e665f;
+}
 
 /*------------------------------------*\
 	Contact Page
@@ -914,11 +938,22 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	line-height: 40px;
 	text-align: center;
 }
-
+.contact-details .fa-phone{
+	margin-left: 15px;
+}
 /* -- Contact Map -- */
-#contact-map {
-	height:260px;
-	border-radius:4px;
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:65.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
 
 /*------------------------------------*\

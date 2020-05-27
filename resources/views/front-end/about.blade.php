@@ -22,6 +22,14 @@
 
     <!-- container -->
     <div class="container">
+      <!-- row -->
+        <div class="row">
+            <div class="section-header text-center">
+                <h2>HAKKIMIZDA</h2>
+                <hr class="section-hr">
+            </div>
+        </div>
+        <!-- /row -->
         <!-- row -->
         <div class="row">
 

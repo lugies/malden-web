@@ -36,11 +36,8 @@
             <div class="col-md-4 col-md-push-8">
                 <ul class="footer-social">
                     <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#" class="youtube"><i class="fa fa-youtube"></i></a></li>
                     <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#" class="xing"><i class="fa fa-xing"></i></a></li>
                 </ul>
             </div>
             <!-- /social -->
@@ -48,7 +45,7 @@
             <!-- copyright -->
             <div class="col-md-8 col-md-pull-4">
                 <div class="footer-copyright">
-                    <span>&copy; Copyright 2018. All Rights Reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com">Colorlib</a></span>
+                    <span>&copy; 2020 MalDen Treuhand GmbH | <i class="fa fa-map-marker"></i> <a href="https://maps.google.com/maps?q=b%C3%B6sch%2069%2C%206331%20h%C3%BCnenberg&amp;t=k&amp;z=19&amp;ie=UTF8" target="_blank"> Bösch 69, 6331 Hünenberg</a> | <i class="fa fa-phone"></i> <a href="tel:041 553 70 70">041 553 70 70</a> | <i class="fa fa-phone"></i> <a href="tel:076 383 46 46">076 383 46 46</a></span>
                 </div>
             </div>
             <!-- /copyright -->

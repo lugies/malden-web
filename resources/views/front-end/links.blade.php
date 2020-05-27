@@ -27,6 +27,7 @@
         <div class="row">
             <div class="section-header text-center">
                 <h2>BAĞLANTILAR</h2>
+                <hr class="section-hr">
             </div>
         </div>
         <!-- /row -->
