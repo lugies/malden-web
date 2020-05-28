@@ -38,6 +38,7 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function(){
     Route::view('/', 'backend.pages.index');
+     /* Services Route */
     Route::group(['prefix' => 'services','as'=>'services.','middleware' => 'auth'], function () {
         Route::get('/', 'ServicesController@index');
         Route::get('add', 'ServicesController@add')->name('add');
@@ -45,6 +46,16 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function(){
         Route::get('edit/{id}', 'ServicesController@edit')->name('edit');
         Route::post('edit/{id}', 'ServicesController@update')->name('update');
         Route::get('delete/{id}', 'ServicesController@delete')->name('delete');
+    });
+    /* About Route */
+    Route::group(['prefix' => 'about','as'=>'about.','middleware' => 'auth'], function () {
+        Route::get('/', 'AboutController@index');
+        Route::post('edit/{id}', 'AboutController@update')->name('update');
+    });
+     /* Contact Route */
+     Route::group(['prefix' => 'contact','as'=>'contact.','middleware' => 'auth'], function () {
+        Route::get('/', 'ContactController@index');
+        Route::post('edit/{id}', 'ContactController@update')->name('update');
     });
 });
 

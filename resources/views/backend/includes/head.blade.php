@@ -28,14 +28,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet" media="screen" href="{{asset('pv-tool/style/custom.css')}}" />
     <script src="{{asset('pv-tool/js/webpack/app.js')}}?<?=time();?>"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<style>
-    .nav-sidebar .nav-item p{
-        color:#fff;
-        font-size:15px;
-    }
-</style>
-
+    <style>
+        .nav-sidebar .nav-item p{
+            color:#fff;
+            font-size:15px;
+        }
+    </style>
     @yield('css')
 </head>
 <body class="hold-transition sidebar-mini">

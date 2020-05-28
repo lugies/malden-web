@@ -251,6 +251,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	.language{
 		/*display: none;*/
 	}
+	.contact-details .fa-phone{
+		margin-left: 0 !important;
+		margin-top: 10px;
+	}
 } 
 .language{
 	position: absolute;

@@ -33,15 +33,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{url('admin/services')}}" class="nav-link">
               <i class="nav-icon fas fa-address-card"></i>
               <p>
-                Hizmetler
+                Servisler
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{url('admin/about')}}" class="nav-link">
               <i class="nav-icon fas fa-file-alt"></i>
               <p>
                 Hakkımızda
