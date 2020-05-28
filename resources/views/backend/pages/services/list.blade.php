@@ -31,31 +31,33 @@
         <div class="tab-content" id="custom-tabs-three-tabContent">
           @foreach($languages as $key => $language)
             <div class="tab-pane fade {{$key == 0 ? 'show active' :  ''}}" id="lang-{{$language->code}}" aria-labelledby="lang-{{$language->code}}-tab" role="tabpanel">
-              @foreach($services as $service)
-                @if ($language->code == $service->lang_code)
-                <div class="col-12 col-sm-6 col-md-3 box" id="box">
-                  <div class="card bg-light">
-                    <div class="card-header border-bottom-0 text-center">
-                      <img src="{{ url('/storage/'.$service->image_path) }}" alt="" class="img-circle img-fluid">
-                    </div>
-                    <div class="card-body pt-0">
-                      <div class="row">
-                        <div class="col-12">
-                          <h2 class="lead text-center"><b>{{$service->name}}</b></h2>
+              <div class="row">
+                @foreach($services as $service)
+                  @if ($language->code == $service->lang_code)
+                    <div class="col-md-3 col-sm-6 box" id="box" data-id="box-{{$service->id}}">
+                      <div class="card bg-light">
+                        <div class="card-header border-bottom-0 text-center">
+                          <img src="{{ url('/storage/'.$service->image_path) }}" alt="" class="img-circle img-fluid">
+                        </div>
+                        <div class="card-body pt-0">
+                          <div class="row">
+                            <div class="col-12">
+                              <h2 class="lead text-center"><b>{{$service->name}}</b></h2>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                          <div class="text-right">
+                            <a class="btn btn-info" href="{{route('services.edit',['id'=>$service->id])}}"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="{{route('services.delete',['id'=>$service->id])}}"
+                              data-id="{{$service->id}}" class="btn btn-danger delete-btn"><i class="fas fa-trash"></i></a>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="card-footer">
-                      <div class="text-right">
-                        <a class="btn btn-info" href="#"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="{{route('delete',['id'=>$service->id])}}"
-                          class="btn btn-danger delete-btn"><i class="fas fa-trash"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                @endif
-              @endforeach
+                  @endif
+                @endforeach
+              </div>
             </div>
           @endforeach
         </div>
@@ -70,12 +72,12 @@
 
     <script>
         $('body').on('click', '.delete-btn', function () {
-
-            var box = $("#box");
+          
+            var box = $(this).closest('#box');
             var id = $(this).data('id');
             var type = $(this).data('type');
             var href = $(this).attr('href');
-
+            console.log(box);
             Swal.fire({
                 title: 'Sil',
                 text: "Bu özelliği silmek istediğinize eminmisiniz ?!",
@@ -95,7 +97,6 @@
                         url: target,
                         dataType: 'json',
                         success: function (data) {
-                            console.log(data);
                             if (data.success) {
                                 Swal.fire(
                                     'Bilgi!',

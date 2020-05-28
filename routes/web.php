@@ -36,11 +36,14 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
 
-Route::group(['namespace' => 'Admin','prefix' => 'admin',  'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function(){
     Route::view('/', 'backend.pages.index');
-    Route::group(['namespace' => 'Services', 'prefix' => 'services','as'=>'services.','middleware' => 'auth'], function () {
+    Route::group(['prefix' => 'services','as'=>'services.','middleware' => 'auth'], function () {
         Route::get('/', 'ServicesController@index');
         Route::get('add', 'ServicesController@add')->name('add');
+        Route::post('add', 'ServicesController@insert')->name('insert');
+        Route::get('edit/{id}', 'ServicesController@edit')->name('edit');
+        Route::post('edit/{id}', 'ServicesController@update')->name('update');
         Route::get('delete/{id}', 'ServicesController@delete')->name('delete');
     });
 });

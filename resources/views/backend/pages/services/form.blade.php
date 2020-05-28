@@ -21,16 +21,20 @@
       <h3 class="card-title">Yeni Servis Ekle</h3>
     </div>
     <div class="card-body">
-        <form action="{{ action('ServicesController@insert') }}" method="post"  enctype="multipart/form-data">
+        <form action="" method="post"  enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="inputName">Servis Adı</label>
-                <input type="text" id="inputName" name="service_name" class="form-control">
+                <input type="text" id="inputName" name="service_name" class="form-control" value="{{$services->name}}">
             </div>
             <div class="form-group">
                 <label for="inputDescription">Servis Açıklaması</label>
-                <textarea id="inputDescription" class="form-control" rows="4" name="service_desc"></textarea>
+                <textarea id="inputDescription" class="form-control" rows="4" name="service_desc">{{$services->desc}}</textarea>
             </div>
+            <div class="form-group">
+              <label for="inputDescription">Kayıtlı Görsel</label>
+              <img src="/storage/{{$services->image_path}}" width="10%" alt="" vclass="img-rounded">
+          </div>
             <div class="form-group">
                 <label for="exampleInputFile">Servis İkon Seçiniz</label>
                 <div class="input-group">
@@ -42,10 +46,15 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputFile">Dil Seçiniz</label>
-                <select class="form-control" name="lang_code">
-                  <option value="DE">Almanca</option>
-                  <option value="TR">Türkçe</option>
-                </select>
+                <select name="lang_code" class="form-control">
+                  @foreach($languages as $language)
+                    @if($services->lang_code == $language->code)
+                      <option value="{{$language->code}}" selected>{{$language->name}}</option>
+                    @else
+                    <option value="{{$language->code}}">{{$language->name}}</option>
+                    @endif
+                  @endforeach
+              </select>
               </div>
             <div class="form-group float-sm-right">
                 <button type="submit" class="btn btn-success"><i class="fas fa-save"></i></button>
