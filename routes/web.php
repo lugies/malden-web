@@ -37,7 +37,7 @@ Route::get('/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function(){
-    Route::view('/', 'backend.pages.index');
+    Route::get('/', 'AdminController@index');
      /* Services Route */
     Route::group(['prefix' => 'services','as'=>'services.','middleware' => 'auth'], function () {
         Route::get('/', 'ServicesController@index');
@@ -46,6 +46,15 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function(){
         Route::get('edit/{id}', 'ServicesController@edit')->name('edit');
         Route::post('edit/{id}', 'ServicesController@update')->name('update');
         Route::get('delete/{id}', 'ServicesController@delete')->name('delete');
+    });
+     /* Links Route */
+    Route::group(['prefix' => 'link','as'=>'link.','middleware' => 'auth'], function () {
+        Route::get('/', 'LinkController@index');
+        Route::get('add', 'LinkController@add')->name('add');
+        Route::post('add', 'LinkController@insert')->name('insert');
+        Route::get('edit/{id}', 'LinkController@edit')->name('edit');
+        Route::post('edit/{id}', 'LinkController@update')->name('update');
+        Route::get('delete/{id}', 'LinkController@delete')->name('delete');
     });
     /* About Route */
     Route::group(['prefix' => 'about','as'=>'about.','middleware' => 'auth'], function () {

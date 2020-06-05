@@ -25,7 +25,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{url('admin/')}}" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Ana Sayfa
@@ -49,7 +49,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{url('admin/link')}}" class="nav-link">
               <i class="nav-icon fas fa-globe-europe"></i>
               <p>
                 Bağlantılar
@@ -57,7 +57,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{url('admin/contact')}}" class="nav-link">
               <i class="nav-icon fas fa-address-book"></i>
               <p>
                 İletişim

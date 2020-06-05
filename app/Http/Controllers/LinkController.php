@@ -1,47 +1,48 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Language;
-use App\Models\Services;
+use App\Models\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class ServicesController extends Controller
+class LinkController extends Controller
 {
     public function index()
     {
         $lang = \Lang::getLocale();
         $data['languages'] = Language::get();
-        $data['services'] = Services::get();
-        return view('backend.pages.services.list', $data);
+        $data['links'] = Link::get();
+        return view('backend.pages.links.list', $data);
     }
     public function add()
     {
-        $data['services'] = new Services();
+        $data['links'] = new Link();
         $data['languages'] = Language::get();
-        return view('backend.pages.services.form', $data);
+        return view('backend.pages.links.form', $data);
     }
     public function insert(Request $request)
     {   
         $request->validate([
-            'service_name' => 'required',
-            'image' => 'required',
-            'service_desc' => 'required',
-            'lang_code' => 'required',
+        'link_name' => 'required',
+        'image' => 'required',
+        'link_url' => 'required',
+        'lang_code' => 'required',
         ],[
-            'service_name.required' => 'Lütfen boş bırakmayınız',
+            'link_name.required' => 'Lütfen boş bırakmayınız',
             'image.required' => 'Lütfen boş bırakmayınız',
-            'service_desc.required' => 'Lütfen boş bırakmayınız',
+            'link_url.required' => 'Lütfen boş bırakmayınız',
             'lang_code.required' => 'Lütfen boş bırakmayınız',
         ]);
-        $services = new Services;
-        $services->name = $request->service_name;
-        $services->image_path = $request->file('image')->store('images' , 'public');
-        $services->desc = $request->service_desc;
-        $services->lang_code = $request->lang_code;
-        if ($services->save()) {
+        $link = new Link;
+        $link->name = $request->link_name;
+        $link->image_path = $request->file('image')->store('images' , 'public');
+        $link->url = $request->link_url;
+        $link->lang_code = $request->lang_code;
+        if ($link->save()) {
             alert()->success('Başarılı','Kaydınız başarılı bir şekilde eklenmiştir.');  
         }
         else
@@ -50,54 +51,51 @@ class ServicesController extends Controller
     }
     public function edit($id)
     {
-        $data['services'] = Services::find($id);
+        $data['links'] = Link::find($id);
         $data['languages'] = Language::get();
-        return view('backend.pages.services.form', $data);
+        return view('backend.pages.links.form', $data);
     }
-
     public function update(Request $request, $id)
     {
         $request->validate([
-            'service_name' => 'required',
+            'link_name' => 'required',
             'image' => 'required',
-            'service_desc' => 'required',
+            'link_url' => 'required',
             'lang_code' => 'required',
         ],[
-            'service_name.required' => 'Lütfen boş bırakmayınız',
+            'link_name.required' => 'Lütfen boş bırakmayınız',
             'image.required' => 'Lütfen boş bırakmayınız',
-            'service_desc.required' => 'Lütfen boş bırakmayınız',
+            'link_url.required' => 'Lütfen boş bırakmayınız',
             'lang_code.required' => 'Lütfen boş bırakmayınız',
         ]);
-
-        $service = Services::find($id);
-        $service->name = $request->service_name;
-        $service->desc = $request->service_desc;
+        $link = Link::find($id);
+        $link->name = $request->link_name;
+        $link->url = $request->link_url;
         if (!empty($request->image)) {
-            $path = public_path('storage/' . $service->image_path);
+            $path = public_path('storage/' . $link->image_path);
             if (file_exists($path)) {
                 unlink($path);
             }
-            $service->image_path = $request->file('image')->store('images' , 'public');
+            $link->image_path = $request->file('image')->store('images' , 'public');
         }
-        $service->lang_code = $request->lang_code;
-        if ($service->save()) {
+        $link->lang_code = $request->lang_code;
+        if ($link->save()) {
             alert()->success('Başarılı','Kaydınız başarılı bir şekilde güncellenmiştir.');  
         }
         else
             alert()->error('Malesef','Kaydınız güncellenirken bir sorun oluştu.');  
         return redirect()->back();
     }
-
     public function delete($id)
     {
         
         $data = array();
         try {
-            //$service = Services::where('id', '=', $id);
-            $service = Services::find($id);
-                if ($service->count() > 0) {
-                    if ($service->delete()) {
-                        $path = public_path('storage/' . $service->image_path);
+            //$link = Services::where('id', '=', $id);
+            $link = Link::find($id);
+                if ($link->count() > 0) {
+                    if ($link->delete()) {
+                        $path = public_path('storage/' . $link->image_path);
                         if (file_exists($path)) {
                             unlink($path);
                             $data['success'] = true;

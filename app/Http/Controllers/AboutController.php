@@ -17,6 +17,13 @@ class AboutController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'desc' => 'required',
+            'lang_code' => 'required',
+        ],[
+            'desc.required' => 'Lütfen boş bırakmayınız',
+            'lang_code.required' => 'Lütfen boş bırakmayınız',
+        ]);
         $about = About::find($id);
         $about->desc = $request->desc;
         $about->lang_code = $request->lang_code;

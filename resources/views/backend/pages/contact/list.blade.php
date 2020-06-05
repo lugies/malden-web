@@ -33,35 +33,35 @@
             <div class="tab-pane fade {{$key == 0 ? 'show active' :  ''}}" id="lang-{{$language->code}}" aria-labelledby="lang-{{$language->code}}-tab" role="tabpanel">
               @foreach($contacts as $contact)
                 @if ($language->code == $contact->lang_code)
-                  <form action="{{action('ContactController@update',[$contact->id])}}" method="post"  enctype="multipart/form-data">@csrf
+                  <form action="{{action('ContactController@update',[$contact->id])}}" method="post"  enctype="multipart/form-data" class="needs-validation" novalidate>@csrf
                     <div class="form-row">
                       <div class="form-group col-md-4">
                         <label for="mail">Email</label>
-                        <input type="email" class="form-control" id="mail" name="mail" value="{{$contact->mail}}">
+                        <input type="email" class="form-control" id="mail" name="mail" value="{{ isset($contact->mail) ? $contact->mail : '' }}" required>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="phone">Telefon</label>
-                        <input type="number" class="form-control" id="phone" name="phone" value="{{$contact->phone}}">
+                        <input type="number" class="form-control" id="phone" name="phone" value="{{ isset($contact->phone) ? $contact->phone : '' }}" required>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="phone_2">Telefon</label>
-                        <input type="number" class="form-control" id="phone_2" name="phone_2" value="{{$contact->phone_2}}">
+                        <input type="number" class="form-control" id="phone_2" name="phone_2" value="{{ isset($contact->phone_2) ? $contact->phone_2 : '' }}" required>
                       </div>
                       <div class="form-group col-md-12">
                         <label for="adress">Adres</label>
-                        <input type="text" class="form-control" id="adress" name="adress" value="{{$contact->adress}}">
+                        <input type="text" class="form-control" id="adress" name="adress" value="{{ isset($contact->adress) ? $contact->adress : '' }}" required>
                       </div>
                       <div class="form-group col-md-12">
                         <label for="adress_2">Şube</label>
-                        <input type="text" class="form-control" id="adress_2" name="adress2" value="{{$contact->adress2}}">
+                        <input type="text" class="form-control" id="adress_2" name="adress2" value="{{ isset($contact->adress2) ? $contact->adress2 : '' }}" required>
                       </div>
                       <div class="form-group col-md-12">
                         <label for="info">Hakkımızda İçeriği</label>
-                        <textarea name="info" class="form-control" id="info" rows="3">{{$contact->info}}</textarea>
+                        <textarea name="info" class="form-control" id="info" rows="3" required>{{ isset($contact->info) ? $contact->info : '' }}</textarea>
                       </div>
                       <div class="form-group col-md-12">
                         <label for="map">Hakkımızda Harita (Google bağlantı linkini ekleyiniz)</label>
-                        <input type="text" class="form-control" id="map" name="map" value="{{$contact->map}}">
+                        <input type="text" class="form-control" id="map" name="map" value="{{ isset($contact->map) ? $contact->map : '' }}">
                       </div>
                       <div class="form-group col-md-12">
                         <input type="hidden" name="lang_code" value="{{$language->code}}">
@@ -83,54 +83,25 @@
 </div>
 @endsection()
 @section('js')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script>
-        $('body').on('click', '.delete-btn', function () {
-          
-            var box = $(this).closest('#box');
-            var id = $(this).data('id');
-            var type = $(this).data('type');
-            var href = $(this).attr('href');
-            console.log(box);
-            Swal.fire({
-                title: 'Sil',
-                text: "Bu özelliği silmek istediğinize eminmisiniz ?!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#218838',
-                cancelButtonColor: '#c82333',
-                confirmButtonText: 'Evet, Sil!',
-                cancelButtonText: 'Hayır'
-            }).then((result) => {
-
-                if (result.value) {
-
-                    var target = href;
-
-                    $.ajax({
-                        url: target,
-                        dataType: 'json',
-                        success: function (data) {
-                            if (data.success) {
-                                Swal.fire(
-                                    'Bilgi!',
-                                    data.message,
-                                    'success'
-                                );
-                                box.remove();
-                            } else {
-                                Swal.fire(
-                                    'Bilgi!',
-                                    data.message,
-                                    'info'
-                                );
-                            }
-                        }
-                    })
-                }
-            });
-            return false;
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.prevent();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
         });
-    </script>
+      }, false);
+    })();
+  </script>
 @endsection
 

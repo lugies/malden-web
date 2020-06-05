@@ -2,15 +2,10 @@
 @section('header-title')
   <div class="row mb-2">
     <div class="col-sm-6">
-      <h1 class="m-0 text-dark">SERVİSLER</h1>
+      <h1 class="m-0 text-dark">Bağlantılar</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
-      <div class="form-group float-sm-right">
-        <select class="form-control">
-          <option>Almanca</option>
-          <option>Türkçe</option>
-        </select>
-      </div>
+      boş
     </div><!-- /.col -->
   </div><!-- /.row -->
 @endsection
@@ -18,39 +13,36 @@
 @section('content')
 <div class="card card-info">
     <div class="card-header">
-      <h3 class="card-title">Yeni Servis Ekle</h3>
+      <h3 class="card-title">Yeni Bağlantı Ekle</h3>
     </div>
     <div class="card-body">
         <form action="" method="post"  enctype="multipart/form-data" class="needs-validation" novalidate>
             @csrf
             <div class="form-group">
-                <label for="validationCustom01">Servis Adı</label>
-                {{ $errors->has('service_name') ? $errors->first('service_name') : '' }}
-                <input type="text" id="validationCustom01" name="service_name" class="form-control" value="{{$services->name}}" required>
+                <label for="inputName">Bağlantı Adı</label>
+                <input type="text" id="inputName" name="link_name" class="form-control" value="{{$links->name}}" required>
             </div>
             <div class="form-group">
-                <label for="validationCustom02">Servis Açıklaması</label>
-                {{ $errors->has('service_desc') ? $errors->first('service_desc') : '' }}
-                <textarea id="validationCustom02" class="form-control" rows="4" name="service_desc" required>{{$services->desc}}</textarea>
-            </div>
-            <div class="form-group">
-              <label for="inputDescription">Kayıtlı Görsel</label>
-              <img src="/storage/{{$services->image_path}}" width="10%" alt="" vclass="img-rounded">
+              <label for="inputName">Bağlantı Adresi</label>
+              <input type="text" id="inputName" name="link_url" class="form-control" value="{{$links->url}}" required>
           </div>
             <div class="form-group">
-                <label>Servis İkon Seçiniz</label>
-                {{ $errors->has('image') ? $errors->first('image') : '' }}
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="validatedCustomFile" name="image" required>
-                  <label class="custom-file-label" for="validatedCustomFile">Görsel Seçiniz...</label>
-                </div>
+              <label for="inputDescription">Kayıtlı Görsel</label>
+              <img src="/storage/{{$links->image_path}}" width="10%" alt="" vclass="img-rounded">
             </div>
             <div class="form-group">
-                <label for="validationCustom04">Dil Seçiniz</label>
-                {{ $errors->has('lang_code') ? $errors->first('lang_code') : '' }}
-                <select id="validationCustom04" name="lang_code" class="form-control" required>
+              <label>Servis İkon Seçiniz</label>
+              {{ $errors->has('image') ? $errors->first('image') : '' }}
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="validatedCustomFile" name="image" required>
+                <label class="custom-file-label" for="validatedCustomFile">Görsel Seçiniz...</label>
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">Dil Seçiniz</label>
+                <select name="lang_code" class="form-control" required>
                   @foreach($languages as $language)
-                    @if($services->lang_code == $language->code)
+                    @if($links->lang_code == $language->code)
                       <option value="{{$language->code}}" selected>{{$language->name}}</option>
                     @else
                     <option value="{{$language->code}}">{{$language->name}}</option>

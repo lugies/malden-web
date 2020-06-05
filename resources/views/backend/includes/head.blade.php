@@ -25,9 +25,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-
-    <link rel="stylesheet" media="screen" href="{{asset('pv-tool/style/custom.css')}}" />
-    <script src="{{asset('pv-tool/js/webpack/app.js')}}?<?=time();?>"></script>
     <style>
         .nav-sidebar .nav-item p{
             color:#fff;
