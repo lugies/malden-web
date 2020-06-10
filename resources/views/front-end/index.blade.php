@@ -11,9 +11,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h1 class="white-text">MALDEN</h1>
-                    <p class="lead white-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a class="main-button icon-button" href="{{url('/')}}">İletişime Geç</a>
+                    <h1 class="white-text">@lang('index.welcome')</h1>
+                    <p class="lead white-text">@lang('index.welcome_text')</p>
+                    <a class="main-button icon-button" href="{{url('/')}}">@lang('index.contact_us')</a>
                 </div>
             </div>
             <div class="row">
@@ -37,16 +37,16 @@
 
             <div class="col-md-6">
                 <div class="section-header">
-                    <h2>MALDEN'e Hoşgeldiniz</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h2>@lang('index.welcome_malden')</h2>
+                    <p class="lead">@lang('index.welcome_malden_text')</p>
                 </div>
 
                 <!-- feature -->
                 <div class="feature">
                     <i class="feature-icon fa fa-book"></i>
                     <div class="feature-content">
-                        <h4>VİZYON</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus aliquam orci, eu placerat odio hendrerit ac.</p>
+                        <h4>@lang('index.vizyon')</h4>
+                        <p>@lang('index.vizyon_text')</p>
                     </div>
                 </div>
                 <!-- /feature -->
@@ -55,8 +55,8 @@
                 <div class="feature">
                     <i class="feature-icon fa fa-users"></i>
                     <div class="feature-content">
-                        <h4>MİSYON</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus aliquam orci, eu placerat odio hendrerit ac.</p>
+                        <h4>@lang('index.misyon')</h4>
+                        <p>@lang('index.misyon_text')</p>
                     </div>
                 </div>
                 <!-- /feature -->
@@ -65,8 +65,8 @@
                 <div class="feature">
                     <i class="feature-icon fa fa-money"></i>
                     <div class="feature-content">
-                        <h4>DEĞERLERİMİZ</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus aliquam orci, eu placerat odio hendrerit ac.</p>
+                        <h4>@lang('index.degerlerimiz')</h4>
+                        <p>@lang('index.degerlerimiz_text')</p>
                     </div>
                 </div>
                 <!-- /feature -->

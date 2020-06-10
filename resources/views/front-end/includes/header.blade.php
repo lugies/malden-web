@@ -23,11 +23,11 @@
                 <!-- Navigation -->
                 <nav id="nav">
                     <ul class="main-menu nav navbar-nav navbar-right">
-                        <li><a class="active" href="{{url('/')}}">Malden</a></li>
-                        <li><a href="{{url('/services')}}">Hizmetler</a></li>
-                        <li><a href="{{url('/about')}}">Hakkımızda</a></li>
-                        <li><a href="{{url('/links')}}">Bağlantılar</a></li>
-                        <li><a href="{{url('/contact')}}">İletişim</a></li>
+                        <li><a class="active" href="{{url(app()->getLocale() , '')}}">Malden</a></li>
+                        <li><a href="{{url(app()->getLocale() , 'services')}}">@lang('menu.service')</a></li>
+                        <li><a href="{{url(app()->getLocale() , 'about')}}">@lang('menu.about')</a></li>
+                        <li><a href="{{url(app()->getLocale() , 'links')}}">@lang('menu.links')</a></li>
+                        <li><a href="{{url(app()->getLocale() , 'contact')}}">@lang('menu.contact')</a></li>
                     </ul>
                 </nav>
                 <!-- /Navigation -->
@@ -35,8 +35,9 @@
             <div class="col-md-2 col-sm-2 col-xs-4">
                 <div id="nav-lang">
                     <div id="language" class="language">
-                        <a href=""><img class="flag" src="{{ asset('assets/png/switzerland.png') }}" alt="switzerland"></a>
-                        <a href=""><img class="flag" src="{{ asset('assets/png/turkey.png') }}" alt="turkey"></a>
+                        {{ \Lang::getLocale() }}
+                        <a href="/de"><img class="flag" src="{{ asset('assets/png/switzerland.png') }}" alt="switzerland"></a>
+                        <a href="/tr"><img class="flag" src="{{ asset('assets/png/turkey.png') }}" alt="turkey"></a>
                     </div>
                 </div>
                 

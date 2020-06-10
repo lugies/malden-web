@@ -9,8 +9,8 @@
       <div class="row">
         <div class="col-md-10">
           <ul class="hero-area-tree">
-            <li><a href="index.html">Anasayfa</a></li>
-            <li>Hakkımızda</li>
+            <li><a href="index.html">@lang('menu.home')</a></li>
+            <li>@lang('menu.contact')</li>
           </ul>
         </div>
       </div>
@@ -23,7 +23,7 @@
         <!-- row -->
         <div class="row">
             <div class="section-header text-center">
-                <h2>İLETİŞİM</h2>
+                <h2>@lang('menu.contact')</h2>
                 <hr class="section-hr">
             </div>
         </div>

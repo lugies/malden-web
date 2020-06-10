@@ -20,8 +20,7 @@
             <!-- footer nav -->
             <div class="col-md-6">
                 <ul class="footer-nav">
-                    <li><a href="#">Gizlilik Politikası</a></li>
-                    <li><a href="#">KVKK</a></li>
+                    <li><a href="#">@lang('menu.privacy_policy')</a></li>
                 </ul>
             </div>
             <!-- /footer nav -->

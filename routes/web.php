@@ -13,20 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('.front-end.index');
-});
-Route::get('/services', function () {
-    return view('.front-end.services');
-});
-Route::get('/links', function () {
-    return view('.front-end.links');
-});
-Route::get('/about', function () {
-    return view('.front-end.about');
-});
-Route::get('/contact', function () {
-    return view('.front-end.contact');
+
+Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'] , 'middleware' => 'setlocale'], function($locale) {
+    
+    Session::put('locale', $locale);
+    
+    Route::get('/', 'BaseController@index');
+    Route::get('/services', 'BaseController@services');
+    Route::get('/links', 'BaseController@links');
+    Route::get('/about', 'BaseController@about');
+    Route::get('/contact', 'BaseController@contact');
 });
 
 Auth::routes();
