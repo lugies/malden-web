@@ -13,11 +13,11 @@ use Illuminate\Http\Request;
 
 class BaseController extends Controller
 {
-    public function index(Request $request , $locale)
+    public function index(Request $request , $locale = 'de')
     {
         //Cookie::queue('locale', $locale, 5);
         if (! in_array($locale, ['de', 'tr'])) {
-            abort(400);
+            $locale = 'de';
         }
         App::setlocale($locale);
         return view('front-end.index');

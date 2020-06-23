@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::any('/', array( 'as' => 'home', 'uses' => 'BaseController@index' ));
 Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'] , 'middleware' => 'setlocale'], function($locale) {
-    
-    Session::put('locale', $locale);
     
     Route::get('/', 'BaseController@index');
     Route::get('/services', 'BaseController@services');
