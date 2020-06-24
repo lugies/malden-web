@@ -30,7 +30,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
 
-Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function(){
+Route::group(['prefix' => '4m3i',  'middleware' => 'auth'], function(){
     Route::get('/', 'AdminController@index');
      /* Services Route */
     Route::group(['prefix' => 'services','as'=>'services.','middleware' => 'auth'], function () {

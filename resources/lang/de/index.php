@@ -11,5 +11,6 @@
         'misyon_text' => 'MISSION text',
         'degerlerimiz' => 'UNSERE WERTE',
         'degerlerimiz_text' => 'MISSION text',
+        'contact_title' => 'Sie finden uns relativ einfach.',
     ];
 ?>

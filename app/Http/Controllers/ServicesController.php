@@ -59,12 +59,10 @@ class ServicesController extends Controller
     {
         $request->validate([
             'service_name' => 'required',
-            'image' => 'required',
             'service_desc' => 'required',
             'lang_code' => 'required',
         ],[
             'service_name.required' => 'Lütfen boş bırakmayınız',
-            'image.required' => 'Lütfen boş bırakmayınız',
             'service_desc.required' => 'Lütfen boş bırakmayınız',
             'lang_code.required' => 'Lütfen boş bırakmayınız',
         ]);

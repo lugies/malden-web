@@ -6,7 +6,7 @@
                 <div class="navbar-header">
                     <!-- Logo -->
                     <div class="navbar-brand">
-                        <a class="logo" href="{{url('/')}}">
+                        <a class="logo" href="{{url(app()->getLocale() , '')}}">
                             <img src="{{ asset('assets/img/logo-alt.png') }}" alt="logo">
                         </a>
                     </div>

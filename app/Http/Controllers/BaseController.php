@@ -18,6 +18,7 @@ class BaseController extends Controller
         //Cookie::queue('locale', $locale, 5);
         if (! in_array($locale, ['de', 'tr'])) {
             $locale = 'de';
+            return redirect('/');
         }
         App::setlocale($locale);
         return view('front-end.index');
@@ -26,7 +27,8 @@ class BaseController extends Controller
     public function services(Request $request , $locale)
     {
         if (! in_array($locale, ['de', 'tr'])) {
-            abort(400);
+            $locale = 'de';
+            return redirect('/');
         }
         App::setlocale($locale);
         $data['services'] = Services::where('lang_code', $locale)->get();
@@ -35,25 +37,32 @@ class BaseController extends Controller
     public function links(Request $request , $locale)
     {
         if (! in_array($locale, ['de', 'tr'])) {
-            abort(400);
+            $locale = 'de';
+            return redirect('/');
         }
         App::setlocale($locale);
-        return view('front-end.links');
+        $data['links'] = Link::where('lang_code', $locale)->get();
+        return view('front-end.links', $data);
     }
     public function about(Request $request , $locale)
     {
         if (! in_array($locale, ['de', 'tr'])) {
-            abort(400);
+            $locale = 'de';
+            return redirect('/');
         }
         App::setlocale($locale);
-        return view('front-end.about');
+        $data = About::where('lang_code', $locale)->first();
+        //dd($data);
+        return view('front-end.about', ['data' => $data]);
     }
     public function contact(Request $request , $locale)
     {
         if (! in_array($locale, ['de', 'tr'])) {
-            abort(400);
+            $locale = 'de';
+            return redirect('/');
         }
         App::setlocale($locale);
-        return view('front-end.contact');
+        $data['contacts'] = Contact::where('lang_code', $locale)->get();
+        return view('front-end.contact', $data);
     }
 }
