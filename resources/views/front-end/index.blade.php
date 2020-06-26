@@ -12,8 +12,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <h1 class="white-text">@lang('index.welcome')</h1>
-                    <p class="lead white-text">@lang('index.welcome_text')</p>
-                    <a class="main-button icon-button" href="{{url('/')}}">@lang('index.contact_us')</a>
+                    <a class="main-button icon-button" href="{{url(app()->getLocale() , 'contact')}}">@lang('index.contact_us')</a>
                 </div>
             </div>
             <div class="row">
@@ -38,7 +37,6 @@
             <div class="col-md-6">
                 <div class="section-header">
                     <h2>@lang('index.welcome_malden')</h2>
-                    <p class="lead">@lang('index.welcome_malden_text')</p>
                 </div>
 
                 <!-- feature -->
@@ -56,21 +54,10 @@
                     <i class="feature-icon fa fa-users"></i>
                     <div class="feature-content">
                         <h4>@lang('index.misyon')</h4>
-                        <p>@lang('index.misyon_text')</p>
+                        <ul>@lang('index.misyon_text')</ul>
                     </div>
                 </div>
                 <!-- /feature -->
-
-                <!-- feature -->
-                <div class="feature">
-                    <i class="feature-icon fa fa-money"></i>
-                    <div class="feature-content">
-                        <h4>@lang('index.degerlerimiz')</h4>
-                        <p>@lang('index.degerlerimiz_text')</p>
-                    </div>
-                </div>
-                <!-- /feature -->
-
             </div>
 
             <div class="col-md-6">

@@ -40,7 +40,9 @@
                     <h3 class="font-weight-medium">{{ $service->name}}</h3>
                   </div>
                   <div class="flip-card-back">
-                    <p>{{ $service->desc}}</p>
+                    <ul>
+                      {!! $service->desc !!}
+                    </ul>
                   </div>
                 </div>
               </div>

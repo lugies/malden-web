@@ -35,7 +35,6 @@
             <div class="col-md-2 col-sm-2 col-xs-4">
                 <div id="nav-lang">
                     <div id="language" class="language">
-                        {{ \Lang::getLocale() }}
                         <a href="/de"><img class="flag" src="{{ asset('assets/png/switzerland.png') }}" alt="switzerland"></a>
                         <a href="/tr"><img class="flag" src="{{ asset('assets/png/turkey.png') }}" alt="turkey"></a>
                     </div>
