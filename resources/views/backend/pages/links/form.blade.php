@@ -19,10 +19,6 @@
         <form action="" method="post"  enctype="multipart/form-data" class="needs-validation" novalidate>
             @csrf
             <div class="form-group">
-                <label for="inputName">Bağlantı Adı</label>
-                <input type="text" id="inputName" name="link_name" class="form-control" value="{{$links->name}}" required>
-            </div>
-            <div class="form-group">
               <label for="inputName">Bağlantı Adresi</label>
               <input type="text" id="inputName" name="link_url" class="form-control" value="{{$links->url}}" required>
           </div>
@@ -31,13 +27,12 @@
               <img src="/storage/{{$links->image_path}}" width="10%" alt="" vclass="img-rounded">
             </div>
             <div class="form-group">
-              <label>Servis İkon Seçiniz</label>
-              {{ $errors->has('image') ? $errors->first('image') : '' }}
+              <label>Bağlantı Görseli Seçiniz</label>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="validatedCustomFile" name="image" required>
+                <input type="file" class="custom-file-input" id="validatedCustomFile" name="image"  {{ $links->image_path ? '' : 'required' }} >
                 <label class="custom-file-label" for="validatedCustomFile">Görsel Seçiniz...</label>
               </div>
-            </div>
+          </div>
             <div class="form-group">
                 <label for="exampleInputFile">Dil Seçiniz</label>
                 <select name="lang_code" class="form-control" required>

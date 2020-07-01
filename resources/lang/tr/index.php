@@ -1,6 +1,7 @@
 <?php
     return [
         'welcome' => 'Hoşgeldiniz',
+        'image' => "background-image:url({{ asset('assets/img/home-background.jpg')}})",
         'contact_us' => 'İletişime Geç',
         'welcome_malden' => 'MALDEN`e Hoşgeldiniz',
         'vizyon' => 'Vizyonumuz',
@@ -14,6 +15,7 @@
         ',
         'degerlerimiz' => 'DEĞERLERİMİZ',
         'degerlerimiz_text' => 'DEĞERLERİMİZ text',
+        'contact_info' => 'İletişim Bilgileri',
         'contact_title' => 'Bizi Kolayca Bulabilirsiniz.',
     ];
 ?>

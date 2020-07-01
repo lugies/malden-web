@@ -3,14 +3,14 @@
 <div class="hero-area section">
 
   <!-- Backgound Image -->
-  <div class="bg-image bg-parallax overlay" style="background-image:url({{ asset('assets/img/page-background.jpg')}})"></div>
+  <div class="bg-image bg-parallax" style="background-image:url({{ asset('assets/img/services-bg.jpg')}})"></div>
   <!-- /Backgound Image -->
 
   <div class="container">
     <div class="row">
       <div class="col-md-10">
         <ul class="hero-area-tree">
-          <li><a href="index.html">@lang('menu.home')</a></li>
+          <li><a href="{{url(app()->getLocale() , '')}}">@lang('menu.home')</a></li>
             <li>@lang('menu.service')</li>
         </ul>
       </div>

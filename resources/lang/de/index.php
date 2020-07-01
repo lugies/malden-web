@@ -1,6 +1,7 @@
 <?php
     return [
         'welcome' => 'Herzlich willkommen',
+        'image' => "asset('assets/img/home-background.jpg'",
         'contact_us' => 'Kontaktiere uns',
         'welcome_malden' => 'Willkommen bei MALDEN',
         'vizyon' => 'Unsere Vision',
@@ -13,6 +14,7 @@
         <li>Handeln mit Arbeitsethik und Arbeitsprinzipien.</li>',
         'degerlerimiz' => 'UNSERE WERTE',
         'degerlerimiz_text' => 'MISSION text',
+        'contact_info' => 'Kontakt Informationen',
         'contact_title' => 'Sie finden uns relativ einfach.',
     ];
 ?>

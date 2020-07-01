@@ -39,7 +39,6 @@
           </div>
             <div class="form-group">
                 <label>Servis İkon Seçiniz</label>
-                {{ $errors->has('image') ? $errors->first('image') : '' }}
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" id="validatedCustomFile" name="image"  {{ $services->image_path ? '' : 'required' }} >
                   <label class="custom-file-label" for="validatedCustomFile">Görsel Seçiniz...</label>

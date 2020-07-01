@@ -21,6 +21,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'] , '
     Route::get('/links', 'BaseController@links');
     Route::get('/about', 'BaseController@about');
     Route::get('/contact', 'BaseController@contact');
+    Route::get('/privacy', 'BaseController@privacy');
 });
 
 Auth::routes();

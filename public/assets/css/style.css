@@ -81,8 +81,8 @@ a:focus{
 
 ul,ol{
     margin: 0;
-    padding: 0;
-    list-style: none
+	padding: 0;
+	list-style: none;
 }
 
 .white-text {
@@ -154,7 +154,7 @@ blockquote:before{
 	bottom:0;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#374050), to(#798696));
 	background-image: linear-gradient(to bottom, #374050 0%, #798696 100%);
-	opacity: 0.7;
+	opacity: 0.5;
 }
 
 /* --- Buttons --- */
@@ -545,7 +545,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	margin-top: 15px;
 	background-color: transparent;
 	width: 100%;
-	height: 400px;
+	height: 290px;
 	border: 1px solid #333;
 	perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
@@ -571,24 +571,29 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	-webkit-backface-visibility: hidden; /* Safari */
 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden; /* Safari */
+	
 	
   }
   
   /* Style the front side (fallback if image is missing) */
   .flip-card-front {
 	color: black;
-	padding-top: 120px;
+	padding-top: 80px;
   }
   
   /* Style the back side */
   .flip-card-back {
 	color: black;
-	transform: rotateY(180deg);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: left;
+	font-size: 13px;
+	line-height: 20px;
   }
 /*------------------------------------*\
 	About & Why Us (Feature)
@@ -705,12 +710,14 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .course {
 	margin-top:20px;
 	margin-bottom:20px;
+	border: 1px solid;
+	border-radius:4px;
 }
 
 .course .course-img {
 	position: relative;
 	display:block;
-	margin-bottom:20px;
+	/*margin-bottom:20px;*/
 	border-radius:4px;
 	overflow:hidden;
 }

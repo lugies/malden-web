@@ -2,10 +2,16 @@
 @section('content')
 <!-- Home -->
 <div id="home" class="hero-area">
-
-    <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url({{ asset('assets/img/home-background.jpg')}})"></div>
+    @if (app()->getLocale() === 'tr') 
+        <!-- Backgound Image -->
+        <div class="bg-image bg-parallax overlay" style="background-image:url({{ asset('assets/img/home-background.jpg')}})"></div>
     <!-- /Backgound Image -->
+    @else
+        <!-- Backgound Image -->
+        <div class="bg-image bg-parallax overlay" style="background-image:url({{ asset('assets/img/home-background-de.jpg')}})"></div>
+    <!-- /Backgound Image -->
+    @endif
+    
 
     <div class="home-wrapper">
         <div class="container">

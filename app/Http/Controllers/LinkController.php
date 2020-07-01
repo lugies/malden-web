@@ -27,18 +27,15 @@ class LinkController extends Controller
     public function insert(Request $request)
     {   
         $request->validate([
-        'link_name' => 'required',
         'image' => 'required',
         'link_url' => 'required',
         'lang_code' => 'required',
         ],[
-            'link_name.required' => 'Lütfen boş bırakmayınız',
-            'image.required' => 'Lütfen boş bırakmayınız',
+            
             'link_url.required' => 'Lütfen boş bırakmayınız',
             'lang_code.required' => 'Lütfen boş bırakmayınız',
         ]);
         $link = new Link;
-        $link->name = $request->link_name;
         $link->image_path = $request->file('image')->store('images' , 'public');
         $link->url = $request->link_url;
         $link->lang_code = $request->lang_code;
@@ -58,18 +55,14 @@ class LinkController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'link_name' => 'required',
             'image' => 'required',
             'link_url' => 'required',
             'lang_code' => 'required',
         ],[
-            'link_name.required' => 'Lütfen boş bırakmayınız',
-            'image.required' => 'Lütfen boş bırakmayınız',
             'link_url.required' => 'Lütfen boş bırakmayınız',
             'lang_code.required' => 'Lütfen boş bırakmayınız',
         ]);
         $link = Link::find($id);
-        $link->name = $request->link_name;
         $link->url = $request->link_url;
         if (!empty($request->image)) {
             $path = public_path('storage/' . $link->image_path);

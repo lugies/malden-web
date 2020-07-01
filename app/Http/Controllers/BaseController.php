@@ -65,4 +65,13 @@ class BaseController extends Controller
         $data['contacts'] = Contact::where('lang_code', $locale)->get();
         return view('front-end.contact', $data);
     }
+    public function privacy(Request $request , $locale)
+    {
+        if (! in_array($locale, ['de', 'tr'])) {
+            $locale = 'de';
+            return redirect('/');
+        }
+        App::setlocale($locale);
+        return view('front-end.privacy');
+    }
 }

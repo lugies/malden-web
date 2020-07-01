@@ -2,14 +2,14 @@
 @section('content')
 <div class="hero-area section">
     <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url({{ asset('assets/img/page-background.jpg')}})"></div>
+    <div class="bg-image bg-parallax" style="background-image:url({{ asset('assets/img/contact-bg.jpg')}})"></div>
     <!-- /Backgound Image -->
   
     <div class="container">
       <div class="row">
         <div class="col-md-10">
           <ul class="hero-area-tree">
-            <li><a href="index.html">@lang('menu.home')</a></li>
+            <li><a href="{{url(app()->getLocale() , '')}}">@lang('menu.home')</a></li>
             <li>@lang('menu.contact')</li>
           </ul>
         </div>
@@ -35,7 +35,7 @@
               
             <!-- contact information -->
 					<div class="col-md-6">
-                        <h4>İletişim Bilgileri</h4>
+                        <h4>@lang('index.contact_info')</h4>
 						<ul class="contact-details">
                             <li>
                                 <i class="fa fa-envelope"></i><a href="mailto:info@malden.ch?subject=MalDen Treuhand GmbH için yeni mesaj">{{$contact->mail}}</a>

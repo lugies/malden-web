@@ -35,8 +35,8 @@
             <div class="col-md-2 col-sm-2 col-xs-4">
                 <div id="nav-lang">
                     <div id="language" class="language">
-                        <a href="/de"><img class="flag" src="{{ asset('assets/png/switzerland.png') }}" alt="switzerland"></a>
-                        <a href="/tr"><img class="flag" src="{{ asset('assets/png/turkey.png') }}" alt="turkey"></a>
+                        <a href="{{url('de',Request::segment(2))}}"><img class="flag" src="{{ asset('assets/png/switzerland.png') }}" alt="switzerland"></a>
+                        <a href="{{url('tr',Request::segment(2))}}"><img class="flag" src="{{ asset('assets/png/turkey.png') }}" alt="turkey"></a>
                     </div>
                 </div>
                 

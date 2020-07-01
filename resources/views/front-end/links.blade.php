@@ -2,14 +2,14 @@
 @section('content')
 <div class="hero-area section">
     <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url({{ asset('assets/img/page-background.jpg')}})"></div>
+    <div class="bg-image bg-parallax" style="background-image:url({{ asset('assets/img/links-bg.jpg')}})"></div>
     <!-- /Backgound Image -->
   
     <div class="container">
       <div class="row">
         <div class="col-md-10">
           <ul class="hero-area-tree">
-            <li><a href="index.html">@lang('menu.home')</a></li>
+            <li><a href="{{url(app()->getLocale() , '')}}">@lang('menu.home')</a></li>
             <li>@lang('menu.links')</li>
           </ul>
         </div>
@@ -45,8 +45,6 @@
                             <img src="/storage/{{$link->image_path}}" alt="">
                             <i class="course-link-icon fa fa-link"></i>
                         </a>
-                        <a class="course-title text-center" target="_blank"  href="{{$link->url}}">{{$link->  name}}</a>
-                        
                     </div>
                 </div>
                 <!-- /single course -->

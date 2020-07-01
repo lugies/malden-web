@@ -2,10 +2,10 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-        Nako Play
+        MALDEN
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2020- <a target="_blank" href="https://kroppa.com">Kroppa.com</a></strong>
+    <strong>Copyright &copy; 2020 - </strong>
 </footer>
 </div>
 <!-- ./wrapper -->
